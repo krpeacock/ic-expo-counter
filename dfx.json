@@ -1,0 +1,13 @@
+{
+    "canisters": {
+        "counter": {
+            "type": "motoko",
+            "main": "counter/main.mo",
+            "declarations": {
+                "output": "declarations/counter"
+            }
+        }
+    },
+    "output_env_file": ".env",
+    "version": 1
+}

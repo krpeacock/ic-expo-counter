@@ -13,13 +13,15 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
   return (
     <ThemedView>
       <TouchableOpacity
+        accessible={true}
         style={styles.heading}
         onPress={() => setIsOpen((value) => !value)}
-        activeOpacity={0.8}>
+        activeOpacity={0.8}
+      >
         <Ionicons
-          name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
+          name={isOpen ? "chevron-down" : "chevron-forward-outline"}
           size={18}
-          color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
+          color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
         />
         <ThemedText type="defaultSemiBold">{title}</ThemedText>
       </TouchableOpacity>
