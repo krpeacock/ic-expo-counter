@@ -1,10 +1,8 @@
 export const idlFactory = ({ IDL }) => {
-  const Counter = IDL.Service({
-    'decrement' : IDL.Func([], [IDL.Nat], []),
-    'getCount' : IDL.Func([], [IDL.Nat], ['query']),
-    'increment' : IDL.Func([], [IDL.Nat], []),
-    'reset' : IDL.Func([], [IDL.Nat], []),
+  return IDL.Service({
+    'get' : IDL.Func([], [IDL.Nat], ['query']),
+    'inc' : IDL.Func([], [], []),
+    'set' : IDL.Func([IDL.Nat], [], []),
   });
-  return Counter;
 };
 export const init = ({ IDL }) => { return []; };

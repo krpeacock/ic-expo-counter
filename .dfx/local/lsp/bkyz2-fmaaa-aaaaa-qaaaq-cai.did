@@ -1,7 +1,5 @@
-type Counter = service {
-  decrement : () -> (nat);
-  getCount : () -> (nat) query;
-  increment : () -> (nat);
-  reset : () -> (nat);
-};
-service : Counter
+service : {
+  get: () -> (nat) query;
+  inc: () -> ();
+  set: (nat) -> ();
+}

@@ -1,26 +1,19 @@
-actor class Counter() = self {
-  stable var state = 0;
-  
-  public func increment () : async Nat {
-    state := state + 1;
-    state;
+actor Counter {
+
+  stable var counter = 0;
+
+  // Get the value of the counter.
+  public query func get() : async Nat {
+    return counter;
   };
 
-  public func decrement () : async Nat {
-    if(state == 0) {
-      return state;
-    };
-    state := state - 1;
-    state;
+  // Set the value of the counter.
+  public func set(n : Nat) : async () {
+    counter := n;
   };
 
-  public func reset () : async Nat {
-    state := 0;
-    state;
+  // Increment the value of the counter.
+  public func inc() : async () {
+    counter += 1;
   };
-
-  public query func getCount () : async Nat {
-    state;
-  };
-
 };
